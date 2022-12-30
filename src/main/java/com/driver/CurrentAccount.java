@@ -1,5 +1,7 @@
 package com.driver;
 
+import java.util.HashMap;
+
 public class CurrentAccount extends BankAccount{
     String tradeLicenseId; //consists of Uppercase English characters only
 
@@ -29,8 +31,22 @@ public class CurrentAccount extends BankAccount{
             if(ch==tradeLicenseId.charAt(i+1)) con=true;
         }
         if(con==false) return;
+        int max_freq=0;
+        HashMap<Character,Integer> hm=new HashMap<>();
+        for(int i=0;i<tradeLicenseId.length();i++){
+            char ch=tradeLicenseId.charAt(i);
+            if(hm.containsKey(ch)){
+                hm.put(ch,hm.getOrDefault(ch,0)+1);
+                if(max_freq<hm.get(ch)) max_freq=hm.get(ch);
+            }
+            else{
+                hm.put(ch,1);
+                if(max_freq<hm.get(ch)) max_freq=hm.get(ch);
+            }
+        }
+        if(max_freq>tradeLicenseId.length()-max_freq+1) throw new Exception("Valid License can not be generated");
 
-      else throw new Exception("Valid License can not be generated");
+     // else throw new Exception("Valid License can not be generated");
 
 
     }
