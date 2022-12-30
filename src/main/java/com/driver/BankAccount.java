@@ -49,7 +49,7 @@ public class BankAccount {
             temp=temp/10;
         }
           if(total!=sum) throw new Exception("Account Number can not be generated");
-              return Integer.toString(digits);
+          return Integer.toString(digits);
 
        // return null;
     }
