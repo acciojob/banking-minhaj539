@@ -1,7 +1,5 @@
 package com.driver;
 
-import java.util.Random;
-
 public class BankAccount {
 
     private String name;
@@ -43,29 +41,15 @@ public class BankAccount {
         //Generate account number having given number of 'digits' such that the sum of digits is equal to 'sum'
         //If it is not possible, throw "Account Number can not be generated" exception
 
-        Random r=new Random();
 
-        String accountNo="";
-        long total=0;
-        for(int i=0; i<digits; i++) {
-            int dig = r.nextInt(10);
-            total+=dig;
-            accountNo+=Integer.toString(dig);
-        }
-        if(total==sum){
-            return accountNo;
-        }else{
-            throw new Exception("Account Number can not be generated");
-        }
-
-        /*int temp=digits,total=0;
+        int temp=digits,total=0;
         while(temp>0){
             int dig=temp%10;
-            total=total*10+dig;
+            total=total+dig;
             temp=temp/10;
         }
           if(total!=sum) throw new Exception("Account Number can not be generated");
-              return Integer.toString(digits);*/
+              return Integer.toString(digits);
 
        // return null;
     }
