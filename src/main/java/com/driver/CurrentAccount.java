@@ -24,7 +24,7 @@ public class CurrentAccount extends BankAccount{
         // If the license Id is valid, do nothing
         // If the characters of the license Id can be rearranged to create any valid license Id
         // If it is not possible, throw "Valid License can not be generated" Exception
-        int n=tradeLicenseId.length();
+      /*  int n=tradeLicenseId.length();
         boolean con=false;
         for(int i=0;i<n-1;i++){
             char ch=tradeLicenseId.charAt(i);
@@ -33,7 +33,7 @@ public class CurrentAccount extends BankAccount{
         if(con==false) return;
 
         if(!isPossible(tradeLicenseId.toCharArray())) throw new Exception("Valid License can not be generated");
-        else return;
+        else return;*/
 
     }
     static boolean isPossible(char[] str)
