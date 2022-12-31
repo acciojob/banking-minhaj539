@@ -42,16 +42,16 @@ public class BankAccount {
         //If it is not possible, throw "Account Number can not be generated" exception
 
 
-      /*  int temp=digits,total=0;
+        int temp=digits,total=0;
         while(temp>0){
             int dig=temp%10;
             total=total+dig;
             temp=temp/10;
         }
           if(total==sum) return Integer.toString(digits);
-          else throw new Exception("Account Number can not be generated");*/
+          else throw new Exception("Account Number can not be generated");
 
-        return null;
+       // return null;
     }
 
     public void deposit(double amount) {
