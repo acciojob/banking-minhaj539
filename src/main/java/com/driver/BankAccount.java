@@ -1,5 +1,7 @@
 package com.driver;
 
+import java.util.Random;
+
 public class BankAccount {
 
     private String name;
@@ -42,16 +44,20 @@ public class BankAccount {
         //If it is not possible, throw "Account Number can not be generated" exception
 
 
-        /*int temp=digits,total=0;
-        while(temp>0){
-            int dig=temp%10;
-            total=total+dig;
-            temp=temp/10;
-        }
-          if(total==sum) return Integer.toString(digits);
-          else throw new Exception("Account Number can not be generated");*/
+        Random r=new Random();
 
-       return null;
+        String accNo=null;
+        long total=0;
+        for(int i=0; i<digits; i++) {
+            int nbr = r.nextInt(10);
+            total+=nbr;
+            accNo+=Integer.toString(nbr);
+        }
+        if(total==sum){
+            return accNo;
+        }else{
+            throw new Exception("Account Number can not be generated");
+        }
     }
 
     public void deposit(double amount) {
