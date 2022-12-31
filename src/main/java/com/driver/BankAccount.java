@@ -48,8 +48,8 @@ public class BankAccount {
             total=total+dig;
             temp=temp/10;
         }
-          if(total!=sum) throw new Exception("Account Number can not be generated");
-          return Integer.toString(digits);
+          if(total==sum) return Integer.toString(digits);
+          else throw new Exception("Account Number can not be generated");
 
        // return null;
     }

@@ -32,8 +32,8 @@ public class CurrentAccount extends BankAccount{
         }
         if(con==false) return;
 
-        if(isPossible(tradeLicenseId.toCharArray())) return;
-        else throw new Exception("Valid License can not be generated");
+        if(!isPossible(tradeLicenseId.toCharArray())) throw new Exception("Valid License can not be generated");
+        else return;
 
     }
     static boolean isPossible(char[] str)
