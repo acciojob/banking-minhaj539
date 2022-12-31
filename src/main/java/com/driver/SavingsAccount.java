@@ -1,4 +1,5 @@
 package com.driver;
+import java.lang.*;
 
 public class SavingsAccount extends BankAccount{
     double rate;
@@ -22,8 +23,8 @@ public class SavingsAccount extends BankAccount{
 
     public SavingsAccount(String name, double balance, double maxWithdrawalLimit, double rate) {
         super(name,balance,0);
-        this.maxWithdrawalLimit=maxWithdrawalLimit;
-        this.rate=rate;
+       setMaxWithdrawalLimit(maxWithdrawalLimit);
+       setRate(rate);
         // minimum balance is 0 by default
 
     }
@@ -38,7 +39,7 @@ public class SavingsAccount extends BankAccount{
         else{
             bal=bal-amount;
             setBalance(bal);
-            maxWithdrawalLimit-=amount;
+            setMaxWithdrawalLimit(maxWithdrawalLimit-amount);
         }
     }
 
